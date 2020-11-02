@@ -11,10 +11,14 @@ inputs:
 
 run:
   path: sh
+  dir: repo/PrimeService
   args:
     - -exc
     - |
-      cd repo
       uname -a
       dotnet --info
-      dotnet test
+
+      ls -al /proc/self/exe
+      cat /proc/self/maps
+
+      dotnet publish -c Release -o /app
